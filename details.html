@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Domine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Domine|Muli" rel="stylesheet">
+    <title>&#127860;Restaurant Details</title>
+
+  </head>
+  <body id="details-body">
+    <header>
+      <blockquote>
+        &#127860;
+          Find the best places to code while you eat!
+      </blockquote>
+
+    <nav> 
+      <ul>        
+        <li class="about"><a href="about.html">About</a></li>
+        <li class="details"><a class="active" href="details.html">Restaurant Details</a></li>
+        <li class="mapid"><a href="index.html">Map</a></li>
+        <li> <form id=class="form-inline" id="user-form" style="display: block;">
+          <div class="form-group" id="restaurant-code">
+            <select id="restaurant-filter" class="form-control">
+              <option>Select A Restaurant</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <img id="headerPhoto" src="IMG/footerPhoto1.png" alt="code fellows logo">
+  </header>
+    
+  <h1 id ="detailsH1"><b>Codability:</b> letting you know if the restaurant has Wi-Fi, what their prices are like, and the distance from Code Fellows.</h1>
+  <aside id="details-aside"></aside>
+
+  <div id="button-container">
+    <section id="store-button">
+      <button type="button" onclick="pastHistory();">Show Past History</button>
+      <button type="button" onclick="clearFunction();">Delete Past History</button>
+    </section>
+  </div>
+
+<script src="details.js"></script>
+
+</body>
+</html>

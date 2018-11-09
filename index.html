@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Domine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Domine|Muli" rel="stylesheet">
+
+  <title>&#127860; Restaurant Finder</title>
+
+</head>
+<body id="index-aside">
+  <header id="headermap">
+      <nav> 
+        <ul>        
+          <li id="aboutLi"><a href="about.html">About</a></li>
+          <li id="detailsLi"><a href="details.html">Restaurant Details</a></li>
+          <li id="mapLi"><a class="active" href="index.html">Map</a></li>
+          <li> <div class="form-group" id="restaurant-code">
+            <select id="restaurant-filter" class="form-control" onchange="filterMarkers(this.value)">
+              <option id='stores'>Select A Restaurant</option>  
+            </select>
+          </div></li>
+        </ul>
+      </nav>
+    <h1 id="h1index">Restaurant Finder &#127860;</h1>
+  </header>
+  <p id='para'><br>This map provides information on different restauarants around Code Fellows. Select your preferred restaurant from the dropdown to find its location on the map.<br> </p>
+  <div id="map"></div>
+  <div id="distance"></div>
+  <section id="user-form-container" class="tab-content" style="display: block;"></section>
+  <div class="form-group" id="restaurant-code">
+  <!-- Load the API from the specified URL
+  * The async attribute allows the browser to render the page while the API loads
+  * The key parameter will contain your own API key 
+  * The callback parameter executes the initMap() function -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0kHBkO9Rmi0fOKp4q5GlLZK6IgpX46z8&libraries=places&callback=initMap"></script> 
+  <script src="js/app.js"></script>
+  <script src="js/rendermap.js"></script>
+</body> 
+</html>
