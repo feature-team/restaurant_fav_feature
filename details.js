@@ -70,7 +70,7 @@ var restaurantSearchHandler = function(event) {
 
       var br = document.createElement('br');
       restaurantUnList.appendChild(br);
-      localStorage.setItem('pastHistory', JSON.stringify(restArr[i])); //goes thru array with all data and stores it in local
+      saveHistory();   //goes thru array with all data and stores it in local
     }
   }
   restaurantAside.appendChild(restaurantUnList);
@@ -86,6 +86,10 @@ var clearFunction = function() {
   localStorage.clear('pastHistory');
   alert('Your Data Has Been Deleted');
 };
+
+var saveHistory = function() {
+  localStorage.setItem('pastHistory', JSON.stringify(restArr[i]));
+}
 
 var pastHistory = function() {
   restPastSearches.push(JSON.parse(localStorage.getItem('pastHistory')));
