@@ -12,11 +12,17 @@ var restaurantSearchHandler = function(event) {
           restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
         }
       }
-      
-      var restImage = document.createElement('img');
-      restImage.id = 'showcase';
-      restImage.src = restPastSearches[i].src;
-      restaurantUnList.appendChild(restImage);
+
+      // var imageDiv = document.createElement('div');
+      // var restImage = document.createElement('img');
+      // restImage.id = 'showcase';
+      // restImage.src = restArr[i].src;
+      // imageDiv.appendChild(restImage);
+      // var faveIcon = document.createElement('img');
+      // faveIcon.id = 'fave-icon';
+      // faveIcon.src = "img/unfaved.png";
+      // imageDiv.appendChild(faveIcon);
+      // restaurantUnList.appendChild(imageDiv);
 
       var nameLiEl = document.createElement('li');
       nameLiEl.id = 'info-list';
