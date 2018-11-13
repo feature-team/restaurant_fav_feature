@@ -287,9 +287,9 @@ background-color: grey;
   transition: all .2s ease-in-out; 
 }
 
-#info-list > li:hover {
+/* #info-list > li:hover {
   transform: scale(1.2); 
-}
+} */
 
 #button-container {
   display: block;
