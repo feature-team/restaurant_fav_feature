@@ -1,3 +1,4 @@
+
 'use strict';
 // var searchWord = document.getElementById('restaurant-filter');
 // var restaurantAside = document.createElement('aside');

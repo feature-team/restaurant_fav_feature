@@ -1,3 +1,4 @@
+
 'use strict';
 var restArr = []; //Array for storing new objects
 var restArrNames = [];
@@ -140,4 +141,5 @@ for(var i in restArrNames) {
   optionEl.value = option;
   searchWord.appendChild(optionEl);
 }
+
 
