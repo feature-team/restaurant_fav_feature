@@ -18,6 +18,7 @@ var CreateRestaurant = function(restName, restAddress, restHours, foodType, keyw
   this.restPhone = restPhone;
   this.restCodability = restCodability;
   this.restLink = restLink;
+  this.favorite = false;
   this.src = src; //For images
   restArr.push(this); //All new objects will go into array so we can loop through info
   restArrNames.push(this.restName);
