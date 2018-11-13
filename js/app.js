@@ -19,6 +19,7 @@ var CreateRestaurant = function(restName, restAddress, restHours, foodType, keyw
   this.restPhone = restPhone;
   this.restCodability = restCodability;
   this.restLink = restLink;
+  this.favorite = false;
   this.src = src; //For images
   restArr.push(this); //All new objects will go into array so we can loop through info
   restArrNames.push(this.restName);
@@ -35,10 +36,16 @@ var restaurantSearchHandler = function(event) {
           restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
         }
       }
+      var imageDiv = document.createElement('div');
       var restImage = document.createElement('img');
       restImage.id = 'showcase';
       restImage.src = restArr[i].src;
-      restaurantUnList.appendChild(restImage);
+      imageDiv.appendChild(restImage);
+      var faveIcon = document.createElement('img');
+      faveIcon.id = 'fave-icon';
+      faveIcon.src = "img/unfaved.png";
+      imageDiv.appendChild(faveIcon);
+      restaurantUnList.appendChild(imageDiv);
 
       var nameLiEl = document.createElement('li');
       nameLiEl.id = 'info-list';
