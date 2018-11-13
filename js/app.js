@@ -6,6 +6,7 @@ var restArrNames = [];
 var restPastSearches = []; //Array for storing past searches
 var searchWord = document.getElementById('restaurant-filter');
 var restaurantAside = document.createElement('aside');
+var restaurantDiv = document.createElement('div');
 var restaurantUnList = document.createElement('ul');
 restaurantUnList.id = 'info-list';
 

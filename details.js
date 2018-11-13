@@ -1,21 +1,18 @@
 
 'use strict';
-// var searchWord = document.getElementById('restaurant-filter');
-// var restaurantAside = document.createElement('aside');
-// var restaurantUnList = document.createElement('ul');
-// restaurantUnList.id = 'info-list';
 
 var restaurantSearchHandler = function(event) {
 
   //Loop thru restArr to see if search name === restName || search food type === foodType || search location === restAddress
-  for(var i in restArr) {
-  //Checks restArr to see if target matches and array item
-    if(restArr[i].restName === event.target.value ) {
+  for(var i in restPastSearches) {
+  //Checks restPastSearches to see if target matches and array item
+    if(restPastSearches[i].restName === event.target.value ) {
       if (restaurantUnList.hasChildNodes()) {
         for (var j = restaurantUnList.childNodes.length - 1; j >= 0; j--) {
           restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
         }
       }
+
       // var imageDiv = document.createElement('div');
       // var restImage = document.createElement('img');
       // restImage.id = 'showcase';
@@ -29,31 +26,31 @@ var restaurantSearchHandler = function(event) {
 
       var nameLiEl = document.createElement('li');
       nameLiEl.id = 'info-list';
-      nameLiEl.textContent = 'Name: ' + restArr[i].restName;
+      nameLiEl.textContent = 'Name: ' + restPastSearches[i].restName;
       restaurantUnList.appendChild(nameLiEl);
 
       var locationLiEl = document.createElement('li');
-      locationLiEl.textContent = 'Location: ' + restArr[i].restAddress;
+      locationLiEl.textContent = 'Location: ' + restPastSearches[i].restAddress;
       restaurantUnList.appendChild(locationLiEl);
 
       var hoursLiEl = document.createElement('li');
-      hoursLiEl.textContent = 'Hours: ' + restArr[i].restHours;
+      hoursLiEl.textContent = 'Hours: ' + restPastSearches[i].restHours;
       restaurantUnList.appendChild(hoursLiEl);
 
       var typeLiEl = document.createElement('li');
-      typeLiEl.textContent = 'Cuisine: ' + restArr[i].foodType;
+      typeLiEl.textContent = 'Cuisine: ' + restPastSearches[i].foodType;
       restaurantUnList.appendChild(typeLiEl);
 
       var phoneLiEl = document.createElement('li');
-      phoneLiEl.textContent = 'Phone Number: ' + restArr[i].restPhone;
+      phoneLiEl.textContent = 'Phone Number: ' + restPastSearches[i].restPhone;
       restaurantUnList.appendChild(phoneLiEl);
 
       var websiteLiEL = document.createElement('li');
-      websiteLiEL.textContent = 'Website: ' + restArr[i].restLink;
+      websiteLiEL.textContent = 'Website: ' + restPastSearches[i].restLink;
       restaurantUnList.appendChild(websiteLiEL);
 
       var codabilityLiEL = document.createElement('li');
-      codabilityLiEL.textContent = 'Codability: ' + restArr[i].restCodability;
+      codabilityLiEL.textContent = 'Codability: ' + restPastSearches[i].restCodability;
       restaurantUnList.appendChild(codabilityLiEL);
 
       var br = document.createElement('br');
@@ -76,16 +73,17 @@ var saveHistory = function() {
   localStorage.setItem('pastHistory', JSON.stringify(restPastSearches));
 }
 
-// restPastSearches = JSON.parse(localStorage.getItem('pastHistory'));
 var pastHistory = function() {
   restPastSearches = JSON.parse(localStorage.getItem('pastHistory'));
   for(var i = 0; i < restPastSearches.length; i++) {
-    if(restPastSearches.length > 1 || restPastSearches !== null) {
-      if (restaurantUnList.hasChildNodes()) {
-        for (var j = restaurantUnList.childNodes.length - 1; j >= 0; j--) {
-          restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
-        }
-      }
+
+    //du-fuck is this shit?!?!?!?!?!
+    // if(restPastSearches.length > 1 || restPastSearches !== null) {
+    //   if (restaurantUnList.hasChildNodes()) {
+    //     for (var j = restaurantUnList.childNodes.length - 1; j >= 0; j--) {
+    //       restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
+    //     }
+    //   }
 
       var restImage = document.createElement('img');
       restImage.id = 'showcase';
@@ -123,9 +121,6 @@ var pastHistory = function() {
       var br = document.createElement('br');
       restaurantUnList.appendChild(br);
     }
-  }
-
-  restaurantAside.appendChild(restaurantUnList);
-  document.body.appendChild(restaurantAside);
-  restPastSearches = [];
-};
+    restaurantAside.appendChild(restaurantUnList);
+    document.body.appendChild(restaurantAside);
+  };
