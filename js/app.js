@@ -1,3 +1,4 @@
+
 'use strict';
 var restArr = []; //Array for storing new objects
 var restArrNames = [];
@@ -58,7 +59,8 @@ var restaurantSearchHandler = function(event) {
 
       var br = document.createElement('br');
       restaurantUnList.appendChild(br);
-      localStorage.setItem('pastHistory', JSON.stringify(restArr[i])); //goes thru array with all data and stores it in local
+      restPastSearches.push(restArr[i]);
+      saveHistory(); //goes thru array with all data and stores it in local
     }
   }
   restaurantAside.appendChild(restaurantUnList);
@@ -69,54 +71,6 @@ var restaurantSearchHandler = function(event) {
 searchWord.addEventListener('change', restaurantSearchHandler);
 
 //Function for clearing localStorage will be linked to button and have removeItem() and alert
-var clearFunction = function() {
-  location.reload();
-  localStorage.clear('pastHistory');
-  alert('Your Data Has Been Deleted');
-};
-
-var pastHistory = function() {
-  restPastSearches.push(JSON.parse(localStorage.getItem('pastHistory')));
-  for(var i = 0; i < restPastSearches.length; i++) {
-    if(restPastSearches.length > 1 || restPastSearches !== null) {
-      if (restaurantUnList.hasChildNodes()) {
-        for (var j = restaurantUnList.childNodes.length - 1; j >= 0; j--) {
-          restaurantUnList.removeChild(restaurantUnList.childNodes[j]);
-        }
-      }
-
-      var restImage = document.createElement('img');
-      restImage.id = 'showcase';
-      restImage.src = restPastSearches[i].src;
-      restaurantUnList.appendChild(restImage);
-      console.log(restPastSearches[i]);
-      console.log(restPastSearches[i].restName);
-      var nameLiEl = document.createElement('li');
-      nameLiEl.id = 'info-list';
-      nameLiEl.textContent = 'Name: ' + restPastSearches[i].restName;
-      restaurantUnList.appendChild(nameLiEl);
-
-      var locationLiEl = document.createElement('li');
-      locationLiEl.textContent = 'Location: ' + restPastSearches[i].restAddress;
-      restaurantUnList.appendChild(locationLiEl);
-
-      var hoursLiEl = document.createElement('li');
-      hoursLiEl.textContent = 'Hours: ' + restPastSearches[i].restHours;
-      restaurantUnList.appendChild(hoursLiEl);
-
-      var typeLiEl = document.createElement('li');
-      typeLiEl.textContent = 'Cuisine: ' + restPastSearches[i].foodType;
-      restaurantUnList.appendChild(typeLiEl);
-
-      var br = document.createElement('br');
-      restaurantUnList.appendChild(br);
-    }
-  }
-
-  restaurantAside.appendChild(restaurantUnList);
-  document.body.appendChild(restaurantAside);
-  restPastSearches = [];
-};
 
 //Twenty restaurants will inherit object properties and method
 //Restaurant 1//new CreateRestaurant(NAME, ADDRESS, HOURS, TYPE, KEYWORDS, PHONE, CODABILITY, WEBSITE)
@@ -187,4 +141,5 @@ for(var i in restArrNames) {
   optionEl.value = option;
   searchWord.appendChild(optionEl);
 }
+
 
