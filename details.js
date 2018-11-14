@@ -124,3 +124,52 @@ var pastHistory = function() {
     restaurantAside.appendChild(restaurantUnList);
     document.body.appendChild(restaurantAside);
   };
+
+
+  // Xochil and Skyler
+  var listFavorites = function() {
+    for(var i in restArr){
+      if (restArr[i].favorite) {
+        //render it!
+      var restImage = document.createElement('img');
+      restImage.id = 'showcase';
+      restImage.src = restPastSearches[i].src;
+      restaurantUnList.appendChild(restImage);
+      var nameLiEl = document.createElement('li');
+      nameLiEl.id = 'info-list';
+      nameLiEl.textContent = 'Name: ' + restPastSearches[i].restName;
+      restaurantUnList.appendChild(nameLiEl);
+
+      var locationLiEl = document.createElement('li');
+      locationLiEl.textContent = 'Location: ' + restPastSearches[i].restAddress;
+      restaurantUnList.appendChild(locationLiEl);
+
+      var hoursLiEl = document.createElement('li');
+      hoursLiEl.textContent = 'Hours: ' + restPastSearches[i].restHours;
+      restaurantUnList.appendChild(hoursLiEl);
+
+      var typeLiEl = document.createElement('li');
+      typeLiEl.textContent = 'Cuisine: ' + restPastSearches[i].foodType;
+      restaurantUnList.appendChild(typeLiEl);
+
+      var phoneLiEl = document.createElement('li');
+      phoneLiEl.textContent = 'Phone Number: ' + restPastSearches[i].restPhone;
+      restaurantUnList.appendChild(phoneLiEl);
+
+      var websiteLiEL = document.createElement('li');
+      websiteLiEL.textContent = 'Website: ' + restPastSearches[i].restLink;
+      restaurantUnList.appendChild(websiteLiEL);
+
+      var codabilityLiEL = document.createElement('li');
+      codabilityLiEL.textContent = 'Codability: ' + restPastSearches[i].restCodability;
+      restaurantUnList.appendChild(codabilityLiEL);
+
+      var br = document.createElement('br');
+      restaurantUnList.appendChild(br);
+
+      restaurantAside.appendChild(restaurantUnList);
+      document.body.appendChild(restaurantAside);
+      }
+    }
+  }
+//*
