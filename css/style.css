@@ -261,11 +261,17 @@ background-color: grey;
   margin-top:0;
 }
 
-
 #showcase:nth-of-type(1n+2) {
   margin-top:30px;
 }
 
+#showcase { 
+  transition: all .2s ease-in-out; 
+}
+
+#showcase:hover {
+  transform: scale(1.5); 
+}
 
 #info-list {
   margin-top: 30px;
@@ -287,9 +293,7 @@ background-color: grey;
 
 #fave-icon {
   height: 50px;
-  position: absolute;
-  left: 2px;
-  z-index: 2;
+  float: left;
 }
 
 /* #info-list > li:hover {
