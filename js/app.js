@@ -7,8 +7,11 @@ var restPastSearches = []; //Array for storing past searches
 var searchWord = document.getElementById('restaurant-filter');
 var restaurantAside = document.createElement('aside');
 var restaurantDiv = document.createElement('div');
-var restaurantUnList = document.createElement('ul');
+// Xochil and Skyler
+var restaurantUnList = document.createElement('div');
 restaurantUnList.id = 'info-list';
+restaurantUnList.style.position = 'relative';
+//*
 
 //Constructor function for object properties
 var CreateRestaurant = function(restName, restAddress, restHours, foodType, keywords, restPhone, restCodability, restLink, src) {
@@ -44,7 +47,7 @@ var restaurantSearchHandler = function(event) {
       imageDiv.appendChild(restImage);
       var faveIcon = document.createElement('img');
       faveIcon.id = 'fave-icon';
-      faveIcon.src = "img/unfaved.png";
+      faveIcon.src = "IMG/unfaved.png";
       imageDiv.appendChild(faveIcon);
       restaurantUnList.appendChild(imageDiv);
 

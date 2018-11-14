@@ -259,6 +259,7 @@ background-color: grey;
   width: 200px;
   height: 200px;
   margin-top:0;
+  z-index: 1;
 }
 
 
@@ -286,10 +287,10 @@ background-color: grey;
 }
 
 #fave-icon {
-  height: 50px;
   position: absolute;
-  left: 2px;
-  z-index: 2;
+  height: 50px;
+  left: 150px;
+  z-index: 100;
 }
 
 /* #info-list > li:hover {
