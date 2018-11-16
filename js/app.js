@@ -116,31 +116,30 @@ var restaurantSearchHandler = function(event) {
   restaurantAside.appendChild(restaurantUnList);
   document.body.appendChild(restaurantAside);
 };
-//Event Listener
-// Edited by Karl and Erik -------------
-searchWord.addEventListener('change', restaurantSearchHandler);
+
+//changing boolean toggle from false to true
 var likeToggle = function(event){
   // switches this.fav to true
   if (restArr[i].favorite === false && event.target.id ==='fave-icon') {
     restArr[i].favorite = true;
+    faveIcon.src = 'IMG/fave_icon.png';
     favToggleSet();
-    // changeImg();
-    // faveIcon.src = '/IMG/fave_icon.png';
-    console.log(restArr[i].favorite);
   } else if (restArr[i].favorite === true && event.target.id ==='fave-icon') {
     restArr[i].favorite = false;
+    faveIcon.src = 'IMG/unfaved.png';
     favToggleSet();
-    // faveIcon.src = '/IMG/unfaved.png';
-    console.log(restArr[i].favorite);
   }
 };
+
+
+//Event Listener
+// Edited by Karl and Erik -------------
+searchWord.addEventListener('change', restaurantSearchHandler);
+
 faveIcon.addEventListener('click', likeToggle);
 
 //Karl and Erik
-// var changeImg = function(){
-  //   var newImage = document.getElementById('fave-icon');
-  //   newImage.setAttribute('src', '/IMG/fave_icon.png');
-  // };
+
   //End Karl and Erik
   //Function for clearing localStorage will be linked to button and have removeItem() and alert
   //Twenty restaurants will inherit object properties and method
