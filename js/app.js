@@ -27,9 +27,8 @@ var CreateRestaurant = function(restName, restAddress, restHours, foodType, keyw
   this.index = restArr.length;
   restArr.push(this); //All new objects will go into array so we can loop through info
   restArrNames.push(this.restName);
-  console.log('i made the restaurants! :D')
 };
-//Karl
+//initial Storage load
 var initStorage = function(){
   if(localStorage.getItem('restArr')) {
   restArr = JSON.parse(localStorage.getItem('restArr'));
@@ -76,7 +75,7 @@ var initStorage = function(){
   }
 };
 initStorage();
-//end Karl
+
 var restaurantSearchHandler = function(event) {
   //Loop thru restArr to see if search name === restName || search food type === foodType || search location === restAddress
   for(var i in restArr) {
@@ -121,10 +120,6 @@ var restaurantSearchHandler = function(event) {
   document.body.appendChild(restaurantAside);
 };
 
-//Event Listener
-// Edited by Karl -------------
-searchWord.addEventListener('change', restaurantSearchHandler);
-
 var likeToggle = function(event){
   // switches this.fav to true
   var i = event.target.value;
@@ -162,15 +157,18 @@ faveIcon.addEventListener('click', likeToggle);
   //Twenty restaurants will inherit object properties and method
   //Restaurant 1//new CreateRestaurant(NAME, ADDRESS, HOURS, TYPE, KEYWORDS, PHONE, CODABILITY, WEBSITE)
   
-  //Loop for filling dropdown
-  for(var i in restArrNames) {
-    var option = restArrNames[i];
-    var optionEl = document.createElement('option');
-    optionEl.textContent = option;
-    optionEl.value = option;
-    searchWord.appendChild(optionEl);
-  }
-  // var favToggleSave = function (){
+//Loop for filling dropdown
+for(var i in restArrNames) {
+  var option = restArrNames[i];
+  var optionEl = document.createElement('option');
+  optionEl.textContent = option;
+  optionEl.value = option;
+  searchWord.appendChild(optionEl);
+}
+
+
+
+// var favToggleSave = function (){
   //   localStorage.setItem('restArr', JSON.stringify(restArr));
   //   console.log('trying to save!')
   // };
