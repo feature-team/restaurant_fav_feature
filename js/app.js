@@ -117,6 +117,7 @@ var restaurantSearchHandler = function(event) {
   restaurantAside.appendChild(restaurantUnList);
   document.body.appendChild(restaurantAside);
 };
+
 //Event Listener
 // Edited by Karl -------------
 searchWord.addEventListener('change', restaurantSearchHandler);
@@ -126,15 +127,16 @@ var likeToggle = function(event){
   debugger;
   if (restArr[i].favorite === false && event.target.id ==='fave-icon') {
     restArr[i].favorite = true;
+
     // favToggleSave();
     // changeImg();
-    // faveIcon.src = '/IMG/fave_icon.png';
+    faveIcon.src = 'IMG/fave_icon.png';
     console.log(restArr[i].favorite);;
 
   } else if (restArr[i].favorite === true && event.target.id ==='fave-icon') {
     restArr[i].favorite = false;
     // favToggleSave();
-    // faveIcon.src = '/IMG/unfaved.png';
+    faveIcon.src = 'IMG/unfaved.png';
     console.log(restArr[i].favorite);
   }
   localStorage.removeItem('restArr');
@@ -142,13 +144,16 @@ var likeToggle = function(event){
   console.log(restArr[i].favorite);
 };
 
+
+
+//Event Listener
+// Edited by Karl and Erik -------------
+searchWord.addEventListener('change', restaurantSearchHandler);
+
 faveIcon.addEventListener('click', likeToggle);
 
 //Karl and Erik
-// var changeImg = function(){
-  //   var newImage = document.getElementById('fave-icon');
-  //   newImage.setAttribute('src', '/IMG/fave_icon.png');
-  // };
+
   //End Karl and Erik
   //Function for clearing localStorage will be linked to button and have removeItem() and alert
   //Twenty restaurants will inherit object properties and method
