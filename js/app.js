@@ -2,6 +2,7 @@
 var restArr = []; //Array for storing new objects
 var restArrNames = [];
 var restPastSearches = []; //Array for storing past searches
+var faves = [];
 var searchWord = document.getElementById('restaurant-filter');
 var restaurantAside = document.createElement('aside');
 var restaurantDiv = document.createElement('div');
@@ -124,12 +125,14 @@ var likeToggle = function(event){
   if (restArr[i].favorite === false && event.target.id ==='fave-icon') {
     restArr[i].favorite = true;
     favToggleSet();
+    faves.push(restArr[i]);
     // changeImg();
     // faveIcon.src = '/IMG/fave_icon.png';
     console.log(restArr[i].favorite);
   } else if (restArr[i].favorite === true && event.target.id ==='fave-icon') {
     restArr[i].favorite = false;
     favToggleSet();
+    // faves.filter(); //need to complete this.
     // faveIcon.src = '/IMG/unfaved.png';
     console.log(restArr[i].favorite);
   }
