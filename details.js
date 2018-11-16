@@ -1,5 +1,10 @@
-
 'use strict';
+
+//Skyler
+var restaurantAside = document.createElement('aside');
+var restaurantUnList = document.createElement('div');
+restaurantUnList.id = 'info-list';
+//END Skyler
 
 var restaurantSearchHandler = function(event) {
 
@@ -133,35 +138,35 @@ var pastHistory = function() {
         //render it!
       var restImage = document.createElement('img');
       restImage.id = 'showcase';
-      restImage.src = restPastSearches[i].src;
+      restImage.src = restArr[i].src;
       restaurantUnList.appendChild(restImage);
       var nameLiEl = document.createElement('li');
       nameLiEl.id = 'info-list';
-      nameLiEl.textContent = 'Name: ' + restPastSearches[i].restName;
+      nameLiEl.textContent = 'Name: ' + restArr[i].restName;
       restaurantUnList.appendChild(nameLiEl);
 
       var locationLiEl = document.createElement('li');
-      locationLiEl.textContent = 'Location: ' + restPastSearches[i].restAddress;
+      locationLiEl.textContent = 'Location: ' + restArr[i].restAddress;
       restaurantUnList.appendChild(locationLiEl);
 
       var hoursLiEl = document.createElement('li');
-      hoursLiEl.textContent = 'Hours: ' + restPastSearches[i].restHours;
+      hoursLiEl.textContent = 'Hours: ' + restArr[i].restHours;
       restaurantUnList.appendChild(hoursLiEl);
 
       var typeLiEl = document.createElement('li');
-      typeLiEl.textContent = 'Cuisine: ' + restPastSearches[i].foodType;
+      typeLiEl.textContent = 'Cuisine: ' + restArr[i].foodType;
       restaurantUnList.appendChild(typeLiEl);
 
       var phoneLiEl = document.createElement('li');
-      phoneLiEl.textContent = 'Phone Number: ' + restPastSearches[i].restPhone;
+      phoneLiEl.textContent = 'Phone Number: ' + restArr[i].restPhone;
       restaurantUnList.appendChild(phoneLiEl);
 
       var websiteLiEL = document.createElement('li');
-      websiteLiEL.textContent = 'Website: ' + restPastSearches[i].restLink;
+      websiteLiEL.textContent = 'Website: ' + restArr[i].restLink;
       restaurantUnList.appendChild(websiteLiEL);
 
       var codabilityLiEL = document.createElement('li');
-      codabilityLiEL.textContent = 'Codability: ' + restPastSearches[i].restCodability;
+      codabilityLiEL.textContent = 'Codability: ' + restArr[i].restCodability;
       restaurantUnList.appendChild(codabilityLiEL);
 
       var br = document.createElement('br');
