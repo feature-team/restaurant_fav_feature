@@ -93,6 +93,7 @@ var restaurantSearchHandler = function(event) {
       restImage.src = restArr[i].src;
       imageDiv.appendChild(restImage);
       faveIcon.id = 'fave-icon';
+      faveIcon.value = i;
       faveIcon.src = "IMG/unfaved.png";
       imageDiv.appendChild(faveIcon);
       restaurantUnList.appendChild(imageDiv);
@@ -126,6 +127,7 @@ searchWord.addEventListener('change', restaurantSearchHandler);
 var likeToggle = function(event){
   // switches this.fav to true
   debugger;
+  var i = event.target.value;
   if (restArr[i].favorite === false && event.target.id ==='fave-icon') {
     restArr[i].favorite = true;
 
