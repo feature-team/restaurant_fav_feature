@@ -24,6 +24,7 @@ var CreateRestaurant = function(restName, restAddress, restHours, foodType, keyw
   this.restLink = restLink;
   this.src = src; //For images
   this.favorite = false;
+  this.index = restArr.length;
   restArr.push(this); //All new objects will go into array so we can loop through info
   restArrNames.push(this.restName);
   console.log('i made the restaurants! :D')
