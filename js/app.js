@@ -30,8 +30,9 @@ var CreateRestaurant = function(restName, restAddress, restHours, foodType, keyw
 };
 //initial Storage load
 var initStorage = function(){
-  if(localStorage.getItem('restArr')) {
+  if(localStorage.getItem('restArr') && localStorage.getItem('restArrNames')) {
   restArr = JSON.parse(localStorage.getItem('restArr'));
+  restArrNames = JSON.parse(localStorage.getItem('restArrNames'));
   } else {
     new CreateRestaurant('MOD Pizza', '305 W Harrison St #221, Seattle, WA 98109 (Seattle Center)', 'Sunday - Thursday 10:30am - 8pm, Friday-Saturday 10:30am -9pm', 'Fast, Italian', ['pizza', 'salad', 'italian', 'breadsticks', 'beer', 'milkshake'], '(206)428-6315', ['- Wifi no', '-Price $$', '-Distance .5 miles'], 'https://modpizza.com/locations/seattle-center/', 'IMG/modPizza.jpg');
     //Restaurant 2//new CreateRestaurant(NAME, ADDRESS, HOURS, TYPE, KEYWORDS, PHONE, CODABILITY, WEBSITE)
@@ -139,6 +140,8 @@ var likeToggle = function(event){
   }
   localStorage.removeItem('restArr');
   localStorage.setItem('restArr', JSON.stringify(restArr));
+  localStorage.removeItem('restArrNames');
+  localStorage.setItem('restArrNames', JSON.stringify(restArrNames));
   console.log(restArr[i].favorite);
 };
 
