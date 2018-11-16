@@ -268,7 +268,9 @@ background-color: grey;
 }
 
 
-#
+#image-div {
+  position: relative;
+}
 
 
 list {

@@ -88,6 +88,7 @@ var restaurantSearchHandler = function(event) {
         }
       }
       var imageDiv = document.createElement('div');
+      imageDiv.id = 'image-div';
       var restImage = document.createElement('img');
       restImage.id = 'showcase';
       restImage.src = restArr[i].src;
@@ -126,7 +127,6 @@ searchWord.addEventListener('change', restaurantSearchHandler);
 
 var likeToggle = function(event){
   // switches this.fav to true
-  debugger;
   var i = event.target.value;
   if (restArr[i].favorite === false && event.target.id ==='fave-icon') {
     restArr[i].favorite = true;
