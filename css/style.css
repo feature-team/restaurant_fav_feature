@@ -60,7 +60,6 @@ blockquote {
 
 nav li {
   float: right;
-  /* list-style-type: "\1F44D"; */
 }
     
 nav li a {
@@ -134,7 +133,7 @@ select {
     width: 96%; 
     padding: 20px;
     margin-bottom: 100px;
-   }
+}
    
 #h1index::first-letter {
   color: rgb(22, 107, 177);
@@ -262,16 +261,9 @@ background-color: grey;
   z-index: 1;
 }
 
-
-/* #showcase:nth-of-type(1n+2) {
-  margin-top:30px;
-} */
-
-
 #image-div {
   position: relative;
 }
-
 
 list {
   margin-top: 30px;
@@ -297,10 +289,6 @@ list {
   left: 150px;
   z-index: 100;
 }
-
-/* #info-list > li:hover {
-  transform: scale(1.2); 
-} */
 
 #button-container {
   display: block;
