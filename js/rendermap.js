@@ -60,7 +60,6 @@ var initMap = function(){
       position: pos,
       customInfo: title,
       icon: 'IMG/ham2.png',
-      // icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
       gestureHandling: 'cooperative',
       map: map
     });
@@ -68,8 +67,6 @@ var initMap = function(){
     rmarkers1.push(marker1);
 
     var contentString = title;
-
-    // Marker click listener
 
     google.maps.event.addListener(marker1, 'click', (function (marker1, map) {
       console.log('MARKER INFO',content);
