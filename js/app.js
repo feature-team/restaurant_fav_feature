@@ -94,7 +94,11 @@ var restaurantSearchHandler = function(event) {
       imageDiv.appendChild(restImage);
       faveIcon.id = 'fave-icon';
       faveIcon.value = i;
-      faveIcon.src = "IMG/unfaved.png";
+      if (restArr[i].favorite){
+        faveIcon.src = "IMG/fave_icon.png";
+      } else {
+        faveIcon.src = "IMG/unfaved.png";
+      }
       imageDiv.appendChild(faveIcon);
       restaurantUnList.appendChild(imageDiv);
       var nameLiEl = document.createElement('li');
