@@ -263,9 +263,9 @@ background-color: grey;
 }
 
 
-#showcase:nth-of-type(1n+2) {
+/* #showcase:nth-of-type(1n+2) {
   margin-top:30px;
-}
+} */
 
 
 #image-div {

@@ -1,9 +1,9 @@
 'use strict';
 
 //Skyler
-var restaurantAside = document.createElement('aside');
-var restaurantUnList = document.createElement('div');
-restaurantUnList.id = 'info-list';
+var restaurantAside = document.getElementById('restaurant-list');
+var restaurantUnList = document.getElementById('info-list');
+var restPastSearches = [];
 //END Skyler
 
 var restaurantSearchHandler = function(event) {
@@ -64,13 +64,12 @@ var restaurantSearchHandler = function(event) {
     }
   }
   restaurantAside.appendChild(restaurantUnList);
-  document.body.appendChild(restaurantAside);
 };
 
 //Function for clearing localStorage will be linked to button and have removeItem() and alert
 var clearFunction = function() {
   location.reload();
-  localStorage.clear('pastHistory');
+  localStorage.removeItem('pastHistory');
   alert('Your Data Has Been Deleted');
 };
 
@@ -79,6 +78,13 @@ var saveHistory = function() {
 }
 
 var pastHistory = function() {
+  // Clear previous content
+  while (restaurantUnList.firstChild) {
+    console.log('removing child');
+    restaurantUnList.removeChild(restaurantUnList.firstChild);
+  }
+  
+
   restPastSearches = JSON.parse(localStorage.getItem('pastHistory'));
   for(var i = 0; i < restPastSearches.length; i++) {
 
@@ -133,6 +139,11 @@ var pastHistory = function() {
 
   // Xochil and Skyler
   var listFavorites = function() {
+    while (restaurantUnList.firstChild) {
+      console.log('removing child');
+      restaurantUnList.removeChild(restaurantUnList.firstChild);
+    }
+    
     var workingArray = JSON.parse(localStorage.getItem('restArr'));
     console.log("I found " + workingArray);
     for(var i in workingArray){
