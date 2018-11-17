@@ -69,7 +69,7 @@ var restaurantSearchHandler = function(event) {
 //Function for clearing localStorage will be linked to button and have removeItem() and alert
 var clearFunction = function() {
   location.reload();
-  localStorage.clear('pastHistory');
+  localStorage.removeItem('pastHistory');
   alert('Your Data Has Been Deleted');
 };
 
