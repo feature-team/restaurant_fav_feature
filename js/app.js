@@ -3,14 +3,13 @@ var restArr = []; //Array for storing new objects
 var restArrNames = [];
 var restPastSearches = []; //Array for storing past searches
 var searchWord = document.getElementById('restaurant-filter');
-var restaurantAside = document.createElement('aside');
 var restaurantDiv = document.createElement('div');
-var restaurantUnList = document.createElement('div');
-restaurantUnList.id = 'info-list';
+var restaurantAside = document.getElementById('restaurant-list');
+var restaurantUnList = document.getElementById('info-list');
 
 var faveIcon = document.createElement('img');
 
-restaurantUnList.style.position = 'relative';
+// restaurantUnList.style.position = 'relative';
 
 //Constructor function for object properties
 var CreateRestaurant = function(restName, restAddress, restHours, foodType, keywords, restPhone, restCodability, restLink, src) {
